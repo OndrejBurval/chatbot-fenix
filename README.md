@@ -19,6 +19,7 @@ chatbot-fenix/
 │       │   │   └── InputArea/
 │       │   ├── types/
 │       │   └── index.ts
+│       ├── dev/          # Development environment for local testing
 │       ├── package.json
 │       ├── tsconfig.json
 │       └── vite.config.ts
@@ -46,6 +47,20 @@ pnpm install
 # Build packages
 pnpm build
 ```
+
+## Local Development
+
+To test and develop the chatbot component locally:
+
+```bash
+# Start the development server
+pnpm dev
+
+# This will launch a browser window with the demo app
+# The server will run on http://localhost:3000 by default
+```
+
+The development environment includes a fully working demo application that showcases the chatbot component with simulated responses.
 
 ## Usage
 
@@ -93,6 +108,12 @@ function App() {
 ```bash
 # Run development server
 pnpm dev
+
+# Build package
+pnpm build
+
+# Run tests
+pnpm test
 ```
 
 ## License

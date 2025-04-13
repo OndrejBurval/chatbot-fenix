@@ -1,31 +1,59 @@
 {
-  "name": "@chatbot-fenix/chatbot",
+  "name": "@ondrej_burval/fenix-chatbot",
   "version": "0.1.0",
+  "description": "A simple, customizable React chatbot component",
+  "author": "Ondřej Buřval",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "chatbot",
+    "chat",
+    "ui",
+    "component",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OndrejBurval/fenix-chatbot"
+  },
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev/",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sass": "^1.71.0",
     "typescript": "^5.3.3",
     "vite": "^5.1.0",
