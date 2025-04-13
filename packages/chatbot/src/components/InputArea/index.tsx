@@ -1,5 +1,6 @@
-import React, { useState, FormEvent } from 'react';
+import React from 'react';
 import { InputAreaProps } from '@/types';
+import { useInput } from '@/hooks';
 import styles from './InputArea.module.scss';
 
 export const InputArea: React.FC<InputAreaProps> = ({
@@ -7,23 +8,17 @@ export const InputArea: React.FC<InputAreaProps> = ({
   placeholder = 'Type a message...',
   isLoading = false
 }) => {
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (message.trim() && !isLoading) {
-      onSendMessage(message);
-      setMessage('');
-    }
-  };
+  const { inputValue, handleInputChange, handleSubmit } = useInput({
+    onSubmit: onSendMessage,
+    isLoading
+  });
 
   return (
     <form className={styles["input-area"]} onSubmit={handleSubmit}>
       <input
         type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        value={inputValue}
+        onChange={handleInputChange}
         placeholder={placeholder}
         disabled={isLoading}
         className={styles["input-area__input"]}
@@ -31,7 +26,7 @@ export const InputArea: React.FC<InputAreaProps> = ({
       />
       <button
         type="submit"
-        disabled={isLoading || !message.trim()}
+        disabled={isLoading || !inputValue.trim()}
         className={styles["input-area__button"]}
         aria-label="Send message"
       >

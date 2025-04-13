@@ -6,21 +6,21 @@ A simple, customizable React chatbot component built with React 19, TypeScript, 
 
 ```bash
 # npm
-npm install @chatbot-fenix/chatbot
+npm install @ondrej_burval/fenix-chatbot
 
 # pnpm
-pnpm add @chatbot-fenix/chatbot
+pnpm add @ondrej_burval/fenix-chatbot
 
 # yarn
-yarn add @chatbot-fenix/chatbot
+yarn add @ondrej_burval/fenix-chatbot
 ```
 
 ## Usage
 
 ```jsx
 import React, { useState } from 'react';
-import { ChatContainer, Message } from '@chatbot-fenix/chatbot';
-import '@chatbot-fenix/chatbot/style.css'; // Import styles
+import { ChatContainer, type Message } from '@ondrej_burval/fenix-chatbot';
+import '@ondrej_burval/fenix-chatbot/style.css'; // Import styles
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -114,6 +114,83 @@ interface Theme {
   textColor?: string;
   fontFamily?: string;
 }
+```
+
+## Hooks
+
+The package also exports several hooks that you can use in your own components:
+
+### useMessages
+
+Manages the state of chat messages and handles sending new messages.
+
+```typescript
+import { useMessages } from '@ondrej_burval/fenix-chatbot';
+
+const MyComponent = () => {
+  const { messages, isLoading, handleSendMessage } = useMessages({
+    initialMessages: [], // Optional initial messages
+    onSendMessage: async (message) => {
+      // Your API call or message handling logic
+      console.log('Message sent:', message);
+    }
+  });
+
+  return (
+    // Your custom UI
+  );
+};
+```
+
+### useInput
+
+Manages the state of an input field and form submission.
+
+```typescript
+import { useInput } from '@ondrej_burval/fenix-chatbot';
+
+const MyInputComponent = () => {
+  const { inputValue, handleInputChange, handleSubmit } = useInput({
+    onSubmit: (value) => {
+      console.log('Submitted:', value);
+    },
+    isLoading: false // Optional loading state
+  });
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Send</button>
+    </form>
+  );
+};
+```
+
+### useTheme
+
+Creates CSS custom properties for theming.
+
+```typescript
+import { useTheme } from '@ondrej_burval/fenix-chatbot';
+
+const ThemedComponent = () => {
+  const themeStyles = useTheme({
+    primaryColor: '#0084ff',
+    backgroundColor: '#f5f5f5',
+    textColor: '#333333',
+    fontFamily: 'Arial, sans-serif'
+  });
+
+  return (
+    <div style={themeStyles}>
+      {/* Themed content */}
+    </div>
+  );
+};
 ```
 
 ## License

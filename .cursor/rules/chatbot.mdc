@@ -32,6 +32,7 @@ alwaysApply: true
 - Keep components small and reusable
 - Avoid unnecessary abstractions and complexity
 - When importing always use absolute path
+- Try to create hooks for components logic for better readability 
 
 ## Styling
 - Use SCSS modules for component styling
