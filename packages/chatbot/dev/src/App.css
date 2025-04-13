@@ -66,6 +66,16 @@
   background-color: #553c9a;
 }
 
+.app__status {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #555;
+  font-style: italic;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .app {

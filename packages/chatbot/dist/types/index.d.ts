@@ -4,19 +4,25 @@ export interface Message {
     sender: 'user' | 'bot';
     timestamp: Date;
 }
+export interface ChatbotCallbacks {
+    onSendStart?: () => void;
+    onSendSuccess?: (message: string, response: string) => void;
+    onSendError?: (message: string, error: any) => void;
+    generateResponse?: (message: string) => Promise<string>;
+}
 export interface ChatbotProps {
     initialMessages?: Message[];
     botName?: string;
     botAvatar?: string;
     userAvatar?: string;
     placeholder?: string;
-    onSendMessage?: (message: string) => Promise<void>;
     theme?: {
         primaryColor?: string;
         backgroundColor?: string;
         textColor?: string;
         fontFamily?: string;
     };
+    callbacks?: ChatbotCallbacks;
 }
 export interface MessageListProps {
     messages: Message[];

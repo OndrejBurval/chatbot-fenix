@@ -1,5 +1,5 @@
-import oe, { useState as A, useCallback as C, useMemo as ie } from "react";
-var $ = { exports: {} }, E = {};
+import oe, { useState as j, useCallback as N, useMemo as ie } from "react";
+var M = { exports: {} }, T = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -9,29 +9,29 @@ var $ = { exports: {} }, E = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var z;
+var G;
 function ce() {
-  if (z) return E;
-  z = 1;
-  var r = Symbol.for("react.transitional.element"), s = Symbol.for("react.fragment");
-  function n(c, a, l) {
+  if (G) return T;
+  G = 1;
+  var r = Symbol.for("react.transitional.element"), a = Symbol.for("react.fragment");
+  function n(i, s, l) {
     var m = null;
-    if (l !== void 0 && (m = "" + l), a.key !== void 0 && (m = "" + a.key), "key" in a) {
+    if (l !== void 0 && (m = "" + l), s.key !== void 0 && (m = "" + s.key), "key" in s) {
       l = {};
-      for (var d in a)
-        d !== "key" && (l[d] = a[d]);
-    } else l = a;
-    return a = l.ref, {
+      for (var f in s)
+        f !== "key" && (l[f] = s[f]);
+    } else l = s;
+    return s = l.ref, {
       $$typeof: r,
-      type: c,
+      type: i,
       key: m,
-      ref: a !== void 0 ? a : null,
+      ref: s !== void 0 ? s : null,
       props: l
     };
   }
-  return E.Fragment = s, E.jsx = n, E.jsxs = n, E;
+  return T.Fragment = a, T.jsx = n, T.jsxs = n, T;
 }
-var x = {};
+var S = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -41,16 +41,16 @@ var x = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var q;
+var z;
 function le() {
-  return q || (q = 1, process.env.NODE_ENV !== "production" && function() {
+  return z || (z = 1, process.env.NODE_ENV !== "production" && function() {
     function r(e) {
       if (e == null) return null;
       if (typeof e == "function")
         return e.$$typeof === ae ? null : e.displayName || e.name || null;
       if (typeof e == "string") return e;
       switch (e) {
-        case y:
+        case O:
           return "Fragment";
         case B:
           return "Profiler";
@@ -78,7 +78,7 @@ function le() {
             return e = e.displayName, e || (e = t.displayName || t.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
           case re:
             return t = e.displayName || null, t !== null ? t : r(e.type) || "Memo";
-          case M:
+          case Y:
             t = e._payload, e = e._init;
             try {
               return r(e(t));
@@ -87,29 +87,29 @@ function le() {
         }
       return null;
     }
-    function s(e) {
+    function a(e) {
       return "" + e;
     }
     function n(e) {
       try {
-        s(e);
+        a(e);
         var t = !1;
       } catch {
         t = !0;
       }
       if (t) {
         t = console;
-        var i = t.error, u = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
-        return i.call(
+        var c = t.error, u = typeof Symbol == "function" && Symbol.toStringTag && e[Symbol.toStringTag] || e.constructor.name || "Object";
+        return c.call(
           t,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           u
-        ), s(e);
+        ), a(e);
       }
     }
-    function c(e) {
-      if (e === y) return "<>";
-      if (typeof e == "object" && e !== null && e.$$typeof === M)
+    function i(e) {
+      if (e === O) return "<>";
+      if (typeof e == "object" && e !== null && e.$$typeof === Y)
         return "<...>";
       try {
         var t = r(e);
@@ -118,8 +118,8 @@ function le() {
         return "<...>";
       }
     }
-    function a() {
-      var e = S.A;
+    function s() {
+      var e = P.A;
       return e === null ? null : e.getOwner();
     }
     function l() {
@@ -132,34 +132,34 @@ function le() {
       }
       return e.key !== void 0;
     }
-    function d(e, t) {
-      function i() {
+    function f(e, t) {
+      function c() {
         F || (F = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
           t
         ));
       }
-      i.isReactWarning = !0, Object.defineProperty(e, "key", {
-        get: i,
+      c.isReactWarning = !0, Object.defineProperty(e, "key", {
+        get: c,
         configurable: !0
       });
     }
-    function h() {
+    function E() {
       var e = r(this.type);
       return L[e] || (L[e] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function b(e, t, i, u, g, f, O, w) {
-      return i = f.ref, e = {
-        $$typeof: Y,
+    function d(e, t, c, u, h, g, C, $) {
+      return c = g.ref, e = {
+        $$typeof: y,
         type: e,
         key: t,
-        props: f,
-        _owner: g
-      }, (i !== void 0 ? i : null) !== null ? Object.defineProperty(e, "ref", {
+        props: g,
+        _owner: h
+      }, (c !== void 0 ? c : null) !== null ? Object.defineProperty(e, "ref", {
         enumerable: !1,
-        get: h
+        get: E
       }) : Object.defineProperty(e, "ref", { enumerable: !1, value: null }), e._store = {}, Object.defineProperty(e._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -174,33 +174,33 @@ function le() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: O
+        value: C
       }), Object.defineProperty(e, "_debugTask", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: w
+        value: $
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function R(e, t, i, u, g, f, O, w) {
+    function v(e, t, c, u, h, g, C, $) {
       var _ = t.children;
       if (_ !== void 0)
         if (u)
           if (se(_)) {
             for (u = 0; u < _.length; u++)
-              I(_[u]);
+              p(_[u]);
             Object.freeze && Object.freeze(_);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else I(_);
+        else p(_);
       if (D.call(t, "key")) {
         _ = r(e);
-        var v = Object.keys(t).filter(function(ne) {
+        var x = Object.keys(t).filter(function(ne) {
           return ne !== "key";
         });
-        u = 0 < v.length ? "{key: someKey, " + v.join(": ..., ") + ": ...}" : "{key: someKey}", V[_ + u] || (v = 0 < v.length ? "{" + v.join(": ..., ") + ": ...}" : "{}", console.error(
+        u = 0 < x.length ? "{key: someKey, " + x.join(": ..., ") + ": ...}" : "{key: someKey}", V[_ + u] || (x = 0 < x.length ? "{" + x.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -209,85 +209,85 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`,
           u,
           _,
-          v,
+          x,
           _
         ), V[_ + u] = !0);
       }
-      if (_ = null, i !== void 0 && (n(i), _ = "" + i), m(t) && (n(t.key), _ = "" + t.key), "key" in t) {
-        i = {};
-        for (var P in t)
-          P !== "key" && (i[P] = t[P]);
-      } else i = t;
-      return _ && d(
-        i,
+      if (_ = null, c !== void 0 && (n(c), _ = "" + c), m(t) && (n(t.key), _ = "" + t.key), "key" in t) {
+        c = {};
+        for (var I in t)
+          I !== "key" && (c[I] = t[I]);
+      } else c = t;
+      return _ && f(
+        c,
         typeof e == "function" ? e.displayName || e.name || "Unknown" : e
-      ), b(
+      ), d(
         e,
         _,
-        f,
         g,
-        a(),
-        i,
-        O,
-        w
+        h,
+        s(),
+        c,
+        C,
+        $
       );
     }
-    function I(e) {
-      typeof e == "object" && e !== null && e.$$typeof === Y && e._store && (e._store.validated = 1);
+    function p(e) {
+      typeof e == "object" && e !== null && e.$$typeof === y && e._store && (e._store.validated = 1);
     }
-    var T = oe, Y = Symbol.for("react.transitional.element"), J = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), X = Symbol.for("react.strict_mode"), B = Symbol.for("react.profiler"), H = Symbol.for("react.consumer"), Z = Symbol.for("react.context"), Q = Symbol.for("react.forward_ref"), K = Symbol.for("react.suspense"), ee = Symbol.for("react.suspense_list"), re = Symbol.for("react.memo"), M = Symbol.for("react.lazy"), te = Symbol.for("react.activity"), ae = Symbol.for("react.client.reference"), S = T.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, D = Object.prototype.hasOwnProperty, se = Array.isArray, N = console.createTask ? console.createTask : function() {
+    var R = oe, y = Symbol.for("react.transitional.element"), J = Symbol.for("react.portal"), O = Symbol.for("react.fragment"), X = Symbol.for("react.strict_mode"), B = Symbol.for("react.profiler"), H = Symbol.for("react.consumer"), Z = Symbol.for("react.context"), Q = Symbol.for("react.forward_ref"), K = Symbol.for("react.suspense"), ee = Symbol.for("react.suspense_list"), re = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), te = Symbol.for("react.activity"), ae = Symbol.for("react.client.reference"), P = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, D = Object.prototype.hasOwnProperty, se = Array.isArray, A = console.createTask ? console.createTask : function() {
       return null;
     };
-    T = {
+    R = {
       "react-stack-bottom-frame": function(e) {
         return e();
       }
     };
-    var F, L = {}, U = T["react-stack-bottom-frame"].bind(
-      T,
+    var F, L = {}, U = R["react-stack-bottom-frame"].bind(
+      R,
       l
-    )(), W = N(c(l)), V = {};
-    x.Fragment = y, x.jsx = function(e, t, i, u, g) {
-      var f = 1e4 > S.recentlyCreatedOwnerStacks++;
-      return R(
+    )(), W = A(i(l)), V = {};
+    S.Fragment = O, S.jsx = function(e, t, c, u, h) {
+      var g = 1e4 > P.recentlyCreatedOwnerStacks++;
+      return v(
         e,
         t,
-        i,
+        c,
         !1,
         u,
-        g,
-        f ? Error("react-stack-top-frame") : U,
-        f ? N(c(e)) : W
+        h,
+        g ? Error("react-stack-top-frame") : U,
+        g ? A(i(e)) : W
       );
-    }, x.jsxs = function(e, t, i, u, g) {
-      var f = 1e4 > S.recentlyCreatedOwnerStacks++;
-      return R(
+    }, S.jsxs = function(e, t, c, u, h) {
+      var g = 1e4 > P.recentlyCreatedOwnerStacks++;
+      return v(
         e,
         t,
-        i,
+        c,
         !0,
         u,
-        g,
-        f ? Error("react-stack-top-frame") : U,
-        f ? N(c(e)) : W
+        h,
+        g ? Error("react-stack-top-frame") : U,
+        g ? A(i(e)) : W
       );
     };
-  }()), x;
+  }()), S;
 }
-process.env.NODE_ENV === "production" ? $.exports = ce() : $.exports = le();
-var o = $.exports;
-const ue = "_header_11n19_1", _e = "_header__avatar_11n19_9", me = "_header__title_11n19_20", j = {
+process.env.NODE_ENV === "production" ? M.exports = ce() : M.exports = le();
+var o = M.exports;
+const ue = "_header_11n19_1", _e = "_header__avatar_11n19_9", me = "_header__title_11n19_20", k = {
   header: ue,
   "header__avatar-container": "_header__avatar-container_11n19_9",
   header__avatar: _e,
   header__title: me
 }, de = ({
   botName: r = "Chatbot",
-  botAvatar: s
-}) => /* @__PURE__ */ o.jsxs("div", { className: j.header, children: [
-  s && /* @__PURE__ */ o.jsx("div", { className: j["header__avatar-container"], children: /* @__PURE__ */ o.jsx("img", { src: s, alt: `${r} avatar`, className: j.header__avatar }) }),
-  /* @__PURE__ */ o.jsx("h2", { className: j.header__title, children: r })
-] }), p = {
+  botAvatar: a
+}) => /* @__PURE__ */ o.jsxs("div", { className: k.header, children: [
+  a && /* @__PURE__ */ o.jsx("div", { className: k["header__avatar-container"], children: /* @__PURE__ */ o.jsx("img", { src: a, alt: `${r} avatar`, className: k.header__avatar }) }),
+  /* @__PURE__ */ o.jsx("h2", { className: k.header__title, children: r })
+] }), b = {
   "message-item": "_message-item_ibhck_1",
   "message-item--bot": "_message-item--bot_ibhck_7",
   "message-item--user": "_message-item--user_ibhck_11",
@@ -298,105 +298,137 @@ const ue = "_header_11n19_1", _e = "_header__avatar_11n19_9", me = "_header__tit
   "message-item__timestamp": "_message-item__timestamp_ibhck_55"
 }, fe = ({
   message: r,
-  botName: s = "Bot",
+  botName: a = "Bot",
   botAvatar: n,
-  userAvatar: c
+  userAvatar: i
 }) => {
-  const a = r.sender === "bot";
-  return /* @__PURE__ */ o.jsxs("div", { className: `${p["message-item"]} ${a ? p["message-item--bot"] : p["message-item--user"]}`, children: [
-    a && n && /* @__PURE__ */ o.jsx("div", { className: p["message-item__avatar"], children: /* @__PURE__ */ o.jsx("img", { src: n, alt: `${s} avatar` }) }),
-    !a && c && /* @__PURE__ */ o.jsx("div", { className: p["message-item__avatar"], children: /* @__PURE__ */ o.jsx("img", { src: c, alt: "User avatar" }) }),
-    /* @__PURE__ */ o.jsxs("div", { className: p["message-item__content"], children: [
-      a && /* @__PURE__ */ o.jsx("div", { className: p["message-item__sender"], children: s }),
-      /* @__PURE__ */ o.jsx("div", { className: p["message-item__text"], children: r.content }),
-      /* @__PURE__ */ o.jsx("div", { className: p["message-item__timestamp"], children: r.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) })
+  const s = r.sender === "bot";
+  return /* @__PURE__ */ o.jsxs("div", { className: `${b["message-item"]} ${s ? b["message-item--bot"] : b["message-item--user"]}`, children: [
+    s && n && /* @__PURE__ */ o.jsx("div", { className: b["message-item__avatar"], children: /* @__PURE__ */ o.jsx("img", { src: n, alt: `${a} avatar` }) }),
+    !s && i && /* @__PURE__ */ o.jsx("div", { className: b["message-item__avatar"], children: /* @__PURE__ */ o.jsx("img", { src: i, alt: "User avatar" }) }),
+    /* @__PURE__ */ o.jsxs("div", { className: b["message-item__content"], children: [
+      s && /* @__PURE__ */ o.jsx("div", { className: b["message-item__sender"], children: a }),
+      /* @__PURE__ */ o.jsx("div", { className: b["message-item__text"], children: r.content }),
+      /* @__PURE__ */ o.jsx("div", { className: b["message-item__timestamp"], children: r.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) })
     ] })
   ] });
-}, G = {
+}, q = {
   "message-list": "_message-list_b12ht_1",
   "message-list__empty-state": "_message-list__empty-state_b12ht_10"
 }, pe = ({
   messages: r,
-  botName: s,
+  botName: a,
   botAvatar: n,
-  userAvatar: c
-}) => /* @__PURE__ */ o.jsx("div", { className: G["message-list"], children: r.length === 0 ? /* @__PURE__ */ o.jsx("div", { className: G["message-list__empty-state"], children: "No messages yet. Start a conversation!" }) : r.map((a) => /* @__PURE__ */ o.jsx(
+  userAvatar: i
+}) => /* @__PURE__ */ o.jsx("div", { className: q["message-list"], children: r.length === 0 ? /* @__PURE__ */ o.jsx("div", { className: q["message-list__empty-state"], children: "No messages yet. Start a conversation!" }) : r.map((s) => /* @__PURE__ */ o.jsx(
   fe,
   {
-    message: a,
-    botName: s,
+    message: s,
+    botName: a,
     botAvatar: n,
-    userAvatar: c
+    userAvatar: i
   },
-  a.id
-)) }), ge = ({
+  s.id
+)) }), xe = ({
   initialMessages: r = [],
-  onSendMessage: s
+  onSendMessage: a
 }) => {
-  const [n, c] = A(r), [a, l] = A(!1), m = C(async (d) => {
-    if (!d.trim()) return;
-    const h = {
+  const [n, i] = j(r), [s, l] = j(!1), m = N(async (f) => {
+    if (!f.trim()) return;
+    const E = {
       id: Date.now().toString(),
-      content: d,
+      content: f,
       sender: "user",
       timestamp: /* @__PURE__ */ new Date()
     };
-    if (c((b) => [...b, h]), s) {
+    if (i((d) => [...d, E]), a) {
       l(!0);
       try {
-        await s(d);
-      } catch (b) {
-        console.error("Error sending message:", b);
+        await a(f);
+      } catch (d) {
+        console.error("Error sending message:", d);
       } finally {
         l(!1);
       }
     }
-  }, [s]);
+  }, [a]);
   return {
     messages: n,
-    isLoading: a,
+    isLoading: s,
     handleSendMessage: m
   };
-}, be = ({ onSubmit: r, isLoading: s = !1 }) => {
-  const [n, c] = A(""), a = C((m) => {
-    c(m.target.value);
-  }, []), l = C((m) => {
-    m.preventDefault(), n.trim() && !s && (r(n), c(""));
-  }, [n, s, r]);
+}, ge = ({ onSubmit: r, isLoading: a = !1 }) => {
+  const [n, i] = j(""), s = N((m) => {
+    i(m.target.value);
+  }, []), l = N((m) => {
+    m.preventDefault(), n.trim() && !a && (r(n), i(""));
+  }, [n, a, r]);
   return {
     inputValue: n,
-    handleInputChange: a,
+    handleInputChange: s,
     handleSubmit: l
   };
-}, ve = (r) => ie(() => ({
+}, be = (r) => ie(() => ({
   "--primary-color": r == null ? void 0 : r.primaryColor,
   "--background-color": r == null ? void 0 : r.backgroundColor,
   "--text-color": r == null ? void 0 : r.textColor,
   "--font-family": r == null ? void 0 : r.fontFamily
-}), [r]), k = {
+}), [r]), ve = ({
+  initialMessages: r = [],
+  callbacks: a = {}
+}) => {
+  const [n, i] = j(r), [s, l] = j(!1), m = async (d) => (await new Promise((v) => setTimeout(v, 1e3)), `You said: "${d}". This is a default response as no custom response generator was provided.`), f = a.generateResponse || m, E = N(async (d) => {
+    if (!d.trim()) return;
+    const v = {
+      id: `user-${Date.now()}`,
+      content: d,
+      sender: "user",
+      timestamp: /* @__PURE__ */ new Date()
+    };
+    i((p) => [...p, v]), a.onSendStart && a.onSendStart(), l(!0);
+    try {
+      const p = await f(d), R = {
+        id: `bot-${Date.now()}`,
+        content: p,
+        sender: "bot",
+        timestamp: /* @__PURE__ */ new Date()
+      };
+      i((y) => [...y, R]), a.onSendSuccess && a.onSendSuccess(d, p);
+    } catch (p) {
+      console.error("Error generating response:", p), a.onSendError && a.onSendError(d, p);
+    } finally {
+      l(!1);
+    }
+  }, [a, f]);
+  return {
+    messages: n,
+    isLoading: s,
+    sendMessage: E
+  };
+}, w = {
   "input-area": "_input-area_1aom8_1",
   "input-area__input": "_input-area__input_1aom8_8",
   "input-area__button": "_input-area__button_1aom8_24",
   "input-area__loading": "_input-area__loading_1aom8_42"
 }, he = ({
   onSendMessage: r,
-  placeholder: s = "Type a message...",
+  placeholder: a = "Type a message...",
   isLoading: n = !1
 }) => {
-  const { inputValue: c, handleInputChange: a, handleSubmit: l } = be({
+  const { inputValue: i, handleInputChange: s, handleSubmit: l } = ge({
     onSubmit: r,
     isLoading: n
   });
-  return /* @__PURE__ */ o.jsxs("form", { className: k["input-area"], onSubmit: l, children: [
+  return /* @__PURE__ */ o.jsxs("form", { className: w["input-area"], onSubmit: l, children: [
     /* @__PURE__ */ o.jsx(
       "input",
       {
         type: "text",
-        value: c,
-        onChange: a,
-        placeholder: s,
+        value: i,
+        onChange: s,
+        placeholder: a,
         disabled: n,
-        className: k["input-area__input"],
+        className: w["input-area__input"],
         "aria-label": "Message input"
       }
     ),
@@ -404,50 +436,50 @@ const ue = "_header_11n19_1", _e = "_header__avatar_11n19_9", me = "_header__tit
       "button",
       {
         type: "submit",
-        disabled: n || !c.trim(),
-        className: k["input-area__button"],
+        disabled: n || !i.trim(),
+        className: w["input-area__button"],
         "aria-label": "Send message",
-        children: n ? /* @__PURE__ */ o.jsx("span", { className: k["input-area__loading"], children: "..." }) : /* @__PURE__ */ o.jsx("span", { children: "Send" })
+        children: n ? /* @__PURE__ */ o.jsx("span", { className: w["input-area__loading"], children: "..." }) : /* @__PURE__ */ o.jsx("span", { children: "Send" })
       }
     )
   ] });
 }, Ee = {
   "chat-container": "_chat-container_1hxk8_8"
-}, Re = ({
+}, Te = ({
   initialMessages: r = [],
-  botName: s = "Chatbot",
+  botName: a = "Chatbot",
   botAvatar: n,
-  userAvatar: c,
-  placeholder: a = "Type a message...",
-  onSendMessage: l,
-  theme: m
+  userAvatar: i,
+  placeholder: s = "Type a message...",
+  theme: l,
+  callbacks: m = {}
 }) => {
-  const { messages: d, isLoading: h, handleSendMessage: b } = ge({
+  const { messages: f, isLoading: E, sendMessage: d } = ve({
     initialMessages: r,
-    onSendMessage: l
-  }), R = ve(m);
+    callbacks: m
+  }), v = be(l);
   return /* @__PURE__ */ o.jsxs(
     "div",
     {
       className: Ee["chat-container"],
-      style: R,
+      style: v,
       children: [
-        /* @__PURE__ */ o.jsx(de, { botName: s, botAvatar: n }),
+        /* @__PURE__ */ o.jsx(de, { botName: a, botAvatar: n }),
         /* @__PURE__ */ o.jsx(
           pe,
           {
-            messages: d,
-            botName: s,
+            messages: f,
+            botName: a,
             botAvatar: n,
-            userAvatar: c
+            userAvatar: i
           }
         ),
         /* @__PURE__ */ o.jsx(
           he,
           {
-            onSendMessage: b,
-            placeholder: a,
-            isLoading: h
+            onSendMessage: d,
+            placeholder: s,
+            isLoading: E
           }
         )
       ]
@@ -455,9 +487,10 @@ const ue = "_header_11n19_1", _e = "_header__avatar_11n19_9", me = "_header__tit
   );
 };
 export {
-  Re as ChatContainer,
-  Re as default,
-  be as useInput,
-  ge as useMessages,
-  ve as useTheme
+  Te as ChatContainer,
+  Te as default,
+  ve as useChatbot,
+  ge as useInput,
+  xe as useMessages,
+  be as useTheme
 };

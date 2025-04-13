@@ -3,7 +3,7 @@ import { ChatbotProps } from '@/types';
 import { Header } from '@/components/Header';
 import { MessageList } from '@/components/MessageList';
 import { InputArea } from '@/components/InputArea';
-import { useMessages, useTheme } from '@/hooks';
+import { useTheme, useChatbot } from '@/hooks';
 import styles from './ChatContainer.module.scss';
 
 export const ChatContainer: React.FC<ChatbotProps> = ({
@@ -12,12 +12,12 @@ export const ChatContainer: React.FC<ChatbotProps> = ({
   botAvatar,
   userAvatar,
   placeholder = 'Type a message...',
-  onSendMessage,
   theme,
+  callbacks = {}
 }) => {
-  const { messages, isLoading, handleSendMessage } = useMessages({
+  const { messages, isLoading, sendMessage } = useChatbot({
     initialMessages,
-    onSendMessage
+    callbacks
   });
 
   const themeStyles = useTheme(theme);
@@ -35,7 +35,7 @@ export const ChatContainer: React.FC<ChatbotProps> = ({
         userAvatar={userAvatar}
       />
       <InputArea
-        onSendMessage={handleSendMessage}
+        onSendMessage={sendMessage}
         placeholder={placeholder}
         isLoading={isLoading}
       />
