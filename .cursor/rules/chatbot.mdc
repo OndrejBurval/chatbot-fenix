@@ -1,0 +1,56 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Guidelines for building a simple React chatbot component as an npm package
+globs: src/**/*.{ts,tsx,scss}
+alwaysApply: true
+---
+
+# Chatbot Component Development Guidelines
+
+## Project Structure
+- Use a monorepo structure with pnpm workspaces
+- Organize code into small, focused files rather than large files with multiple responsibilities
+- Follow a modular component architecture
+- Place each component in its own directory with its associated styles and tests
+
+## Technology Stack
+- React 19 for UI components
+- TypeScript for type safety
+- SCSS modules for styling (NO Tailwind CSS)
+- pnpm for package management
+- Vite for development and building
+- Use ESM modules for better tree-shaking
+
+## Component Design
+- Create simple, focused components with clear responsibilities
+- Prefer functional components with hooks
+- Use TypeScript interfaces for props and state
+- Keep components small and reusable
+- Avoid unnecessary abstractions and complexity
+
+## Styling
+- Use SCSS modules for component styling
+- Create a separate .module.scss file for each component
+- Use variables for colors, spacing, and other design tokens
+- Avoid inline styles
+- Keep styling simple and minimal
+- Always use BEM naming
+- When using styles inside react component, always use them as styles["button__primary"]
+- For sizing units like padding, font size, margin etc. always use rem units
+
+## Package Structure
+- Set up proper package.json with peer dependencies
+- Configure proper build process for npm package distribution
+- Ensure TypeScript types are properly exported
+- Include README with usage instructions
+- Set up proper entry points for the package
+
+## Code Quality
+- Write clean, readable code
+- Add appropriate comments for complex logic
+- Use consistent naming conventions
+- Follow React best practices

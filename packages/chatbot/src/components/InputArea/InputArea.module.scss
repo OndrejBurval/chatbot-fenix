@@ -1,0 +1,50 @@
+@use "sass:color";
+
+.input-area {
+  display: flex;
+  padding: 0.9375rem;
+  border-top: 0.0625rem solid #eee;
+  background-color: white;
+}
+
+.input-area__input {
+  flex: 1;
+  padding: 0.625rem 0.9375rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 1.25rem;
+  outline: none;
+  font-size: 0.875rem;
+
+  &:focus {
+    border-color: var(--primary-color, #0084ff);
+  }
+
+  &:disabled {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+  }
+}
+
+.input-area__button {
+  margin-left: 0.625rem;
+  padding: 0.625rem 0.9375rem;
+  background-color: var(--primary-color, #0084ff);
+  color: white;
+  border: none;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover:not(:disabled) {
+    background-color: color.adjust(#0084ff, $lightness: -10%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.input-area__loading {
+  display: inline-block;
+}

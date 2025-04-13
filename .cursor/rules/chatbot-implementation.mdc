@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Implementation details for the chatbot component
+globs: src/components/**/*.tsx
+alwaysApply: true
+---
+
+# Chatbot Implementation Guidelines
+
+## Core Functionality
+- The chatbot should display a chat interface with messages
+- Allow users to send messages
+- Display bot responses
+- Support basic customization through props
+
+## Component Structure
+- Create separate components for:
+  1. ChatContainer (main component)
+  2. MessageList (to display messages)
+  3. MessageItem (individual message)
+  4. InputArea (for user input)
+  5. Header (optional chatbot header)
+
+## Props Interface
+- Design a clean, intuitive props interface
+- Include options for:
+  - Initial messages
+  - Bot name/avatar
+  - Custom styling options
+  - Callback for message handling
+  - Placeholder text
+
+## State Management
+- Use React hooks for state management
+- Keep message history in state
+- Track loading states for bot responses
+
+## Styling
+- Use SCSS modules with clear class names
+- Create variables for common values
+- Support theming through props
+- Ensure mobile responsiveness
+
+## Accessibility
+- Ensure proper keyboard navigation
+- Add appropriate ARIA attributes
+- Support screen readers
+- Maintain good color contrast

@@ -1,0 +1,17 @@
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.message-list__empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+  font-style: italic;
+}
