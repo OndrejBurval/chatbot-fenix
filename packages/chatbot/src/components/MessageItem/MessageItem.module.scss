@@ -14,8 +14,13 @@
 }
 
 .message-item__avatar {
-  width: 1.875rem;
-  height: 1.875rem;
+  --_w: 1.875rem;
+
+  min-width: var(--_w);
+  min-height: var(--_w);
+  max-width: var(--_w);
+  max-height: var(--_w);
+
   border-radius: 50%;
   overflow: hidden;
   margin: 0 0.5rem;

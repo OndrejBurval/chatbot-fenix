@@ -45,9 +45,7 @@ export const useChatbot = ({
     setMessages(prevMessages => [...prevMessages, userMessage]);
 
     // Call onSendStart callback
-    if (callbacks.onSendStart) {
-      callbacks.onSendStart();
-    }
+    callbacks?.onSendStart?.();
 
     setIsLoading(true);
 
@@ -67,16 +65,12 @@ export const useChatbot = ({
       setMessages(prevMessages => [...prevMessages, botMessage]);
 
       // Call onSendSuccess callback
-      if (callbacks.onSendSuccess) {
-        callbacks.onSendSuccess(content, responseText);
-      }
+      callbacks?.onSendSuccess?.(content, responseText);
     } catch (error) {
       console.error('Error generating response:', error);
 
       // Call onSendError callback
-      if (callbacks.onSendError) {
-        callbacks.onSendError(content, error);
-      }
+      callbacks?.onSendError?.(content, error);
     } finally {
       setIsLoading(false);
     }

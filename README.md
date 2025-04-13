@@ -65,32 +65,54 @@ The development environment includes a fully working demo application that showc
 ## Usage
 
 ```jsx
-import { ChatContainer } from '@chatbot-fenix/chatbot';
-import '@chatbot-fenix/chatbot/dist/style.css';
+import React, { useState } from 'react';
+import { ChatContainer } from '@ondrej_burval/fenix-chatbot';
+import '@ondrej_burval/fenix-chatbot/style.css';
 
-function App() {
-  const handleSendMessage = async (message) => {
-    // Handle sending message logic here
-    console.log('Message sent:', message);
-
-    // Example: You can add bot response after API call
-    // setMessages([...messages, { id: 'bot-1', content: 'Hello!', sender: 'bot', timestamp: new Date() }]);
-  };
+function AdvancedApp() {
+  const [status, setStatus] = useState('');
 
   return (
-    <ChatContainer
-      botName="Fenix Bot"
-      botAvatar="/bot-avatar.png"
-      userAvatar="/user-avatar.png"
-      placeholder="Ask me anything..."
-      onSendMessage={handleSendMessage}
-      theme={{
-        primaryColor: '#0084ff',
-        backgroundColor: '#f5f5f5',
-        textColor: '#333333',
-        fontFamily: 'Arial, sans-serif',
-      }}
-    />
+    <div>
+      <div>Status: {status}</div>
+
+      <ChatContainer
+        botName="Fenix Bot"
+        initialMessages={[
+          {
+            id: 'bot-welcome',
+            content: 'Hello! How can I help you today?',
+            sender: 'bot',
+            timestamp: new Date()
+          }
+        ]}
+        callbacks={{
+          // Called when message sending starts
+          onSendStart: () => {
+            setStatus('Sending message...');
+          },
+
+          // Called on successful response
+          onSendSuccess: (message, response) => {
+            setStatus(`Sent: "${message}" and received response`);
+            // You can do analytics here
+          },
+
+          // Called on error
+          onSendError: (message, error) => {
+            setStatus(`Error sending: "${message}"`);
+            console.error('Chat error:', error);
+          },
+
+          // Custom response generator
+          generateResponse: async (message) => {
+            // Add your API call here
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return `You sent: "${message}" and I'm a custom response!`;
+          }
+        }}
+      />
+    </div>
   );
 }
 ```
